@@ -7,9 +7,9 @@ import * as k8s from '@pulumi/kubernetes';
 import { input } from '../../types';
 
 export class Gateway extends k8s.apiextensions.CustomResource {
-  constructor(name: string, args: input.networking.v1alpha3.GatewayArgs, opts?: CustomResourceOptions) {
+  constructor(name: string, args: input.networking.v1beta1.GatewayArgs, opts?: CustomResourceOptions) {
     const inputs: k8s.apiextensions.CustomResourceArgs = {
-      apiVersion: 'networking.istio.io/v1alpha3',
+      apiVersion: 'networking.istio.io/v1beta1',
       kind: 'Gateway',
       metadata: {
         name,

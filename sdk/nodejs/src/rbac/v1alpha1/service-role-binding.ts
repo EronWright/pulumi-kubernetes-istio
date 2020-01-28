@@ -11,6 +11,9 @@ export class ServiceRoleBinding extends k8s.apiextensions.CustomResource {
     const inputs: k8s.apiextensions.CustomResourceArgs = {
       apiVersion: 'rbac.istio.io/v1alpha1',
       kind: 'ServiceRoleBinding',
+      metadata: {
+        name,
+      },
       ...args,
     };
 
